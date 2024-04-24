@@ -23,7 +23,13 @@ Route::get('/', function () {
     if (auth()->check()) {
         return redirect()->route('dashboard');
     } else {
-        return redirect()->route('register');
+        return Inertia::render('Welcome', [
+            
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+            
+    
+        ]);
     }
 });
 

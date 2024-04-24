@@ -7,9 +7,19 @@
 
 @layer tailwind-base {
     @tailwind base;
+    @font-face {
+        font-family: 'jersey';
+        src: url('@/assets/fonst/Jersey25-Regular.ttf') format('ttf'), url('@/assets/fonst/Jersey25-Regular.ttf')
+            format('ttf');
+        font-weight: 400;
+        font-style: normal;
+      }
 }
 
 @layer tailwind-utilities {
     @tailwind components;
     @tailwind utilities;
 }
+
+
+
