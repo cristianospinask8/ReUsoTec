@@ -2,6 +2,7 @@
 import PageLayout from '@/Layouts/PageLayout.vue'
 import { ref, onMounted, defineProps } from "vue";
 import { Head, Link } from '@inertiajs/vue3';
+import imagen1 from '../../../public/assets/img/reciclar2.jpg';
 
 
 defineProps({
@@ -445,8 +446,9 @@ const particleGround = function (element, options) {
             </div>
         </div>
         <!-- parte 2 -->
-        <div class="w-full flex h-full py-2 bg-gradient-to-b from-dark to-secondary overflow-hidden">
-            <div class="sm:flex sm:grid grid-cols-6 gap-4 mt-12">
+        <div class="w-full flex h-full pb-2 bg-gradient-to-b from-dark to-secondary overflow-hidden">
+            <div class="sm:flex sm:grid grid-cols-6 gap-4 mt-2" data-aos="fade-down" data-aos-duration="1000"
+                data-aos-easing="linear">
                 <div class="sm:col-span-4 md:col-span-3 p-12 m-auto">
                     <!-- Agrega la etiqueta de video con la ruta del archivo de video -->
                     <video autoplay loop controls muted @mousemove="handleMouseMove"
@@ -454,15 +456,50 @@ const particleGround = function (element, options) {
                         <source src="/assets/video/crisis.mp4" type="video/mp4">
                         Tu navegador no soporta el elemento de video.
                     </video>
-                    
+
                 </div>
-                <div class="sm:col-span-2 md:col-span-3 p-6 m-auto">
+                <div class="sm:col-span-2 md:col-span-3 p-8 m-auto">
                     <div>
-                        <h2 class="text-2xl sm:text-4xl font-bold text-center text-white jersey-25-regular">¡Aportar un granito de arena,
-                            sirve porque ganas descuentos en nuevos productos y ayudas al planeta!</h2>
+                        <h2 class="text-2xl sm:text-4xl font-bold text-center text-white jersey-25-regular">¡Aportar un
+                            granito de arena,
+                            sirve porque ganas y ayudas al planeta!
+                        </h2>
+
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Parte 3 -->
+        <div class="w-full flex h-full py-4 bg-gradient-to-b from-secondary to-dark overflow-hidden">
+            <div class="sm:flex sm:grid grid-cols-6 gap-4 mt-6" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-easing="linear">
+                <div class="sm:col-span-2 md:col-span-3 p-8 m-auto">
+                    <div>
+                        <h2 class="text-2xl sm:text-4xl font-bold text-center text-white jersey-25-regular">
+                            Si tienes productos electrónicos que ya no usas o materiales para reciclar, te puedes
+                            inscribir y solicitar recogida, para ganar multiples beneficios.
+                        </h2>
+                        <div class="mt-4 flex justify-center">
+                            <a :href="route('register')"
+                                class="py-2 px-4 rounded-md bg-primary text-lg sm:text-xl text-secondary cursor shadow-xl hover:scale-125 hover:shadow-2xl">
+                                Inscribirse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-4 md:col-span-3 p-12 m-auto flex justify-center">
+                    <!-- Agrega la etiqueta de video con la ruta del archivo de video -->
+                    <figure autoplay loop controls muted @mousemove="handleMouseMove" class="flex justify-center">
+                        <img class="rounded-xl shadow-2xl hover:shadow-6xl" :src="imagen1" alt="imagen de reciclaje"
+                            title="¿Sabes que pasa con tus dispositivos electrónicos cuando los botas?">
+                        <figcaption lang="es" class="hidden">Esta es una imagen de reciclaje de productos electrónicos
+                        </figcaption>
+                    </figure>
+
+                </div>
+            </div>
+
         </div>
 
     </PageLayout>
