@@ -33,6 +33,9 @@ Route::get('/', function () {
     }
 });
 
+Route::get('/about', fn () => Inertia::render('About'))->name('about');
+Route::get('/conocenos', fn () => Inertia::render('Conocenos'))->name('conocenos');
+
 Route::get('/home', function () {
     if (auth()->check()) {
         return redirect()->route('dashboard');
@@ -52,7 +55,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/about', fn () => Inertia::render('About'))->name('about');
+    
     Route::get('users', [UserController::class, 'index'])->name('users.index');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

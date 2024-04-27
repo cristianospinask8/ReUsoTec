@@ -3,7 +3,7 @@
 
     <GuestLayout>
         <Link href="/" class="flex items-center justify-center">
-        <ApplicationLogo class="fill-current text-gray-500" />
+        <ApplicationLogo class="fill-current text-gray-500" v-tooltip.top="{ value: '¿Quieres volver al inicio?', autoHide: false }" />
         </Link>
 
         <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
@@ -11,7 +11,7 @@
         </div>
 
         <form @submit.prevent="submit">
-            <div>
+            <div class="mt-4">
                 <InputLabel for="email" value="Correo electronico" />
                 <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus
                     autocomplete="username" />
@@ -35,6 +35,7 @@
                     class="text-sm text-gray-600 underline hover:text-gray-900">
                 ¿Olvidaste tu contraseña?
                 </Link>
+                
             </div>
 
             <div class="mt-6">
@@ -43,6 +44,9 @@
                     Iniciar Sesión
                 </PrimaryButton>
             </div>
+            <Link :href="route('register')" class="mt-4 text-sm text-gray-600 underline hover:text-gray-900">
+                Desea registrarse?
+                </Link>
         </form>
     </GuestLayout>
 </template>

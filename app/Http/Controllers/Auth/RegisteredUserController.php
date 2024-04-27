@@ -22,13 +22,12 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
-        $fecha_inicio = RequestFacade::input('fechaCreacion');
+    
 
         return Inertia::render(
             'Auth/Register', 
             [
-                'puntos' => Puntos::all(),
-                'fecha_inicio' => $fecha_inicio,
+                
             ]
         );
     }

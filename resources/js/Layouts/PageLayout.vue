@@ -23,13 +23,13 @@
                     </div>
                     <div class="hidden md:block">
                         <ul class="flex space-x-4">
-                            <li><a :href="route('dashboard')" :class="{ 'underline': route().current('dashboard') }"
-                                    class="text-white cursor hover:underline">Se parte del cambio</a></li>
-                            <li><a :href="route('about')" :class="{ 'underline': route().current('about') }"
-                                    class="text-white cursor hover:underline">conócenos</a></li>
+                            <li><a :href="route('about')" :class="{ 'underline': route().current('about') }" v-tooltip.top="{ value: 'Únete como empresa', autoHide: false }"
+                                    class="text-white cursor border-r-2 pe-2 hover:underline">Se parte del cambio</a></li>
+                            <li><a :href="route('conocenos')" :class="{ 'underline': route().current('conocenos') }"
+                                    class="text-white cursor border-r-2 pe-2 hover:underline">conócenos</a></li>
                             <li><a :href="route('login')" :class="{ 'underline': route().current('login') }"
-                                    class="text-white cursor hover:underline">inicio sesión</a></li>
-                            <li><a :href="route('register')" :class="{ 'underline': route().current('register') }"
+                                    class="text-white cursor border-r-2 pe-2 hover:underline">inicio sesión</a></li>
+                            <li><a :href="route('register')" :class="{ 'underline': route().current('register') }" v-tooltip.top="{ value: 'ReUsoPartner', autoHide: false }"
                                     class="text-white cursor hover:underline">Registrarse</a></li>
                         </ul>
                     </div>

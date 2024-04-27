@@ -11,7 +11,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import PrimeVue from 'primevue/config';
 import 'vue-toast-notification/dist/theme-default.css';
-
+import Tooltip from 'primevue/tooltip';
 
 
 const appName = import.meta.env.VITE_APP_NAME || 'Vive Digital';
@@ -25,6 +25,7 @@ createInertiaApp({
             .use(VueSweetalert2)
             .use(PrimeVue)
             .use(ZiggyVue)
+            .directive('tooltip', Tooltip)
             .mount(el);
     },
     progress: {
